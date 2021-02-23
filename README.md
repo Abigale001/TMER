@@ -1,14 +1,14 @@
-#Temporal Meta-path Guided Explainable Recommendation (WSDM2021)
+# Temporal Meta-path Guided Explainable Recommendation (WSDM2021)
 
-##TMER
+## TMER
 Code of paper "[Temporal Meta-path Guided Explainable Recommendation](https://arxiv.org/pdf/2101.01433.pdf)".
 
 
-##Requirements
+## Requirements
 python==3.6.12  networkx==2.5  numpy==1.15.0  pandas==1.0.1  pytorch==1.0.0  pytorch-nlp==0.5.0
 
 You can also install the environment via `requirements.txt` and `environment.yaml`.
-##Usage
+## Usage
 1.learn the user-item path representations
 
 `python data/user_item_representation.py`
@@ -17,7 +17,7 @@ You can also install the environment via `requirements.txt` and `environment.yam
 
 `python run.py`
 
-##Cite
+## Cite
 If you find this code useful in your research, please consider citing:
 ```
 @article{chen2021temporal,
