@@ -1,0 +1,55 @@
+name: HGN
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=main
+  - blas=1.1=openblas
+  - ca-certificates=2020.12.5=ha878542_0
+  - certifi=2020.12.5=py36h5fab9bb_1
+  - cffi=1.14.4=py36h261ae71_0
+  - decorator=4.4.2=py_0
+  - intel-openmp=2020.2=254
+  - ld_impl_linux-64=2.33.1=h53a641e_7
+  - libedit=3.1.20191231=h14c3975_1
+  - libffi=3.3=he6710b0_2
+  - libgcc-ng=9.1.0=hdf63c60_0
+  - libgfortran=3.0.0=1
+  - libgfortran-ng=7.5.0=hae1eefd_17
+  - libgfortran4=7.5.0=hae1eefd_17
+  - libstdcxx-ng=9.1.0=hdf63c60_0
+  - mkl=2020.2=256
+  - ncurses=6.2=he6710b0_1
+  - networkx=2.5=py_0
+  - ninja=1.10.1=hfc4b9b4_2
+  - numpy=1.15.0=py36_blas_openblashd3ea46f_200
+  - openblas=0.2.20=8
+  - openssl=1.1.1h=h516909a_0
+  - pandas=1.0.1=py36hb3f55d8_0
+  - pip=20.2.4=py36h06a4308_0
+  - pycparser=2.20=pyh9f0ad1d_2
+  - python=3.6.12=hcff3b4d_2
+  - python-dateutil=2.8.1=py_0
+  - python_abi=3.6=1_cp36m
+  - pytorch=1.0.0=py3.6_cuda9.0.176_cudnn7.4.1_1
+  - pytz=2020.5=pyhd8ed1ab_0
+  - readline=8.0=h7b6447c_0
+  - scikit-learn=0.19.1=py36_blas_openblas_201
+  - scipy=1.1.0=py36_blas_openblash7943236_201
+  - setuptools=50.3.1=py36h06a4308_1
+  - six=1.15.0=pyh9f0ad1d_0
+  - sqlite=3.33.0=h62c20be_0
+  - tk=8.6.10=hbc83047_0
+  - wheel=0.35.1=pyhd3eb1b0_0
+  - xz=5.2.5=h7b6447c_0
+  - zlib=1.2.11=h7b6447c_3
+  - pip:
+    - pytorch-nlp==0.5.0
+    - tqdm==4.52.0
+prefix: /data1/home/ideatmp/miniconda3/envs/HGN
