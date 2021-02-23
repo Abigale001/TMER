@@ -5,7 +5,7 @@ Code of paper "[Temporal Meta-path Guided Explainable Recommendation](https://ar
 
 
 ## Requirements
-python==3.6.12  networkx==2.5  numpy==1.15.0  pandas==1.0.1  pytorch==1.0.0  pytorch-nlp==0.5.0
+  python==3.6.12  <br> networkx==2.5  <br>  numpy==1.15.0  <br>  pandas==1.0.1  <br>  pytorch==1.0.0  <br>  pytorch-nlp==0.5.0
 
 You can also install the environment via `requirements.txt` and `environment.yaml`.
 ## Usage
