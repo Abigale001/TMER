@@ -20,8 +20,6 @@ ui_path_vectors:{
 }
 """
 
-
-
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(device)
 
@@ -53,17 +51,11 @@ def instance_emb(metapath_file, output_file):
     walks = get_instance_paths(metapath_file)
     path_dict = instance_paths_to_dict(metapath_file)
 
-    # print(walks)
-    # print(len(walks))  # 多少个node
     print("Training...")
     model = Word2Vec(walks, size=100, window=3, min_count=0, sg=1, hs=1,
                      workers=1)
-    # model.wv.save_word2vec_format(output_file)
-    # vector = model.wv['24179']
-    # print(len(model.wv.vocab))
-    ## concat word and feed into autoencoder??
 
-    ## just use mean
+    # mean pooling
     ui_path_vectors = {}
     for ui, ui_paths in path_dict.items():
         for path in ui_paths:
@@ -76,26 +68,23 @@ def instance_emb(metapath_file, output_file):
                 ui_path_vectors[ui] = [path_vector]
             else:
                 ui_path_vectors[ui].append(path_vector)
-    # print(len(ui_path_vectors.values()))
-    # print(ui_path_vectors.values())
-    # print(ui_path_vectors)
     pickle.dump(ui_path_vectors, open(output_file, 'wb'))
 
 
 if __name__ == '__main__':
-    # ui_metapaths_list = ['uibi', 'uibici', 'uici', 'uicibi']
+    ui_metapaths_list = ['uibi', 'uibici', 'uici', 'uicibi']
     ii_metapaths_list = ['ibibi', 'ibici', 'ibiui', 'icibi', 'icici', 'iciui', 'iuiui']
     # ii form
-    data_base_folder = '../../Amazon_Automotive/'
+    data_base_folder = '../../Amazon_Music/'
     # embed ui paths
-    # for metapath in ui_metapaths_list:
-    #     metapath_file = data_base_folder + 'path/all_ui_ii_instance_paths/' + metapath + '.paths'
-    #     output_file = data_base_folder + 'path/meta_path_instances_representation/' + metapath + '.wv'
-    #     instance_emb(metapath_file, output_file)
+    for metapath in ui_metapaths_list:
+        metapath_file = data_base_folder + 'path/all_ui_ii_instance_paths/' + metapath + '.paths'
+        output_file = data_base_folder + 'path/meta_path_instances_representation/' + metapath + '.wv'
+        instance_emb(metapath_file, output_file)
     # embed ii paths
     ii_instance_file = data_base_folder + 'path/all_ui_ii_instance_paths/ii_random_form_onlyuc.paths'
     output_ii_emb_file = data_base_folder + 'path/meta_path_instances_representation/ii_random_form_onlyuc.wv'
-    # 这个ii_random_form.wv是 7个item-item instance各随机抽取1个path，进行后续的attention工作。
+    # we randomly select 1 path from 7 item-item instances to generate 'this ii_random_form.wv', and then the following attention
     instance_emb(ii_instance_file, output_ii_emb_file)
 
 
