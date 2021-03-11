@@ -5,10 +5,13 @@ Code of paper "[Temporal Meta-path Guided Explainable Recommendation](https://ar
 
 
 ## Requirements
-  python==3.6.12  <br> networkx==2.5  <br>  numpy==1.15.0  <br>  pandas==1.0.1  <br>  pytorch==1.0.0  <br>  pytorch-nlp==0.5.0
+python==3.6.12 <br>  networkx==2.5 <br> numpy==1.15.0 <br> pandas==1.0.1 <br> pytorch==1.0.0 <br> pytorch-nlp==0.5.0
+<br>gensim==3.8.3
 
 You can also install the environment via `requirements.txt` and `environment.yaml`.
 ## Usage
+If you want to change the dataset, you can modify the name in the code.
+
 1.learn the user-item path representations
 
 `python data/user_item_representation.py`
@@ -16,6 +19,23 @@ You can also install the environment via `requirements.txt` and `environment.yam
 2.run the recommendation
 
 `python run.py`
+
+3.learn the item-item path representations
+
+`python data/path/user_history/item_item_representation.py`
+
+4.learn the user-item path representations
+
+`python data/user_item_representation.py`
+
+5.sequence item-item paths for each user
+
+`python data/path/user_history/user_history.py`
+
+6.run the recommendation
+
+`python run.py`
+
 
 ## Cite
 If you find this code useful in your research, please consider citing:
