@@ -12,13 +12,13 @@ You can also install the environment via `requirements.txt` and `environment.yam
 ## Usage
 If you want to change the dataset, you can modify the name in the code.
 
-1.learn the user-item path representations
+1.process data
 
-`python data/user_item_representation.py`
+`python data_process.py`
 
-2.run the recommendation
+2.learn the user and item representations
 
-`python run.py`
+`python data/path/embed_nodes.py`
 
 3.learn the item-item path representations
 
