@@ -82,8 +82,8 @@ if __name__ == '__main__':
         output_file = data_base_folder + 'path/meta_path_instances_representation/' + metapath + '.wv'
         instance_emb(metapath_file, output_file)
     # embed ii paths
-    ii_instance_file = data_base_folder + 'path/all_ui_ii_instance_paths/ii_random_form_onlyuc.paths'
-    output_ii_emb_file = data_base_folder + 'path/meta_path_instances_representation/ii_random_form_onlyuc.wv'
+    ii_instance_file = data_base_folder + 'path/all_ui_ii_instance_paths/ii_random_form.paths'
+    output_ii_emb_file = data_base_folder + 'path/meta_path_instances_representation/ii_random_form.wv'
     # we randomly select 1 path from 7 item-item instances to generate 'this ii_random_form.wv', and then the following attention
     instance_emb(ii_instance_file, output_ii_emb_file)
 
