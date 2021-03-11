@@ -28,11 +28,16 @@ If you want to change the dataset, you can modify the name in the code.
 
 `python data/user_item_representation.py`
 
-5.sequence item-item paths for each user
+5.generate user-item and item-item meta-path instances and learn their representations
+
+`python data/path/generate_paths.py`<br>
+`python data/path/user_history/meta_path_instances_representation.py`
+
+6.sequence item-item paths for each user
 
 `python data/path/user_history/user_history.py`
 
-6.run the recommendation
+7.run the recommendation
 
 `python run.py`
 
