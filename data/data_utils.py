@@ -13,6 +13,40 @@ def load_node_tensor(filename):
     nodewv_tensor = torch.Tensor(nodewv_tensor)
     return nodewv_tensor
 
+def instance_paths_to_dict(path_file) -> dict:
+    user_item_paths_relation_uibi = open(path_file,'r').readlines() #4463
+    ui_pairs = []
+    ui_paths_dict = {}
+    for user_item_paths_relation in user_item_paths_relation_uibi:
+        ui, pathnum, path_list_str = user_item_paths_relation.strip().split('\t',2)
+        path_list = path_list_str.split('\t') #pathnum 是 list的长度
+        (user, item) = ui.split(',')
+        ui_pair = (int(user), int(item))
+        ui_pairs.append(ui_pair)
+        if ui_pair not in ui_paths_dict.keys():
+            for index, path in enumerate(path_list):
+                path = path.strip().split(' ')
+                path_list[index] = path
+            ui_paths_dict[ui_pair] = path_list
+    # print(ui_paths_dict)
+    # exit(0)
+    return ui_paths_dict
+
+def get_instance_paths(path_file) -> list:
+    user_item_paths_relation_uibi = open(path_file, 'r').readlines()
+    paths_list = []
+    for user_item_paths_relation in user_item_paths_relation_uibi:
+        ui, pathnum, path_list_str = user_item_paths_relation.strip().split('\t', 2)
+        path_list = path_list_str.split('\t')  # pathnum 是 list的长度
+        for index, path in enumerate(path_list):
+            path = path.strip().split(' ')
+            path_list[index] = path
+            paths_list.append(path)
+    # print(len(paths_list))
+    # print(paths_list)
+    # exit(0)
+    return paths_list
+
 def load_ui_seq_relation(uifile):
     ui_dict = {}
     user_item_data = open(uifile, 'r').readlines()
