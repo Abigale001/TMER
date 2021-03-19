@@ -52,4 +52,15 @@ If you find this code useful in your research, please consider citing:
   year={2021}
 }
 ```
+or
+
+```
+@inproceedings{10.1145/3437963.3441762,
+	author = {Chen, Hongxu and Li, Yicong and Sun, Xiangguo and Xu, Guandong and Yin, Hongzhi},
+	title = {Temporal Meta-Path Guided Explainable Recommendation},
+	year = {2021},
+	booktitle = {Proceedings of the 14th ACM International Conference on Web Search and Data Mining},
+	pages = {1056–1064}
+}
+```
 
