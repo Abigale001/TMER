@@ -10,6 +10,22 @@ from collections import defaultdict
 from itertools import chain
 from pathlib import Path
 
+ii_path_dict = defaultdict()
+ibibi_path_dict = defaultdict()
+ibici_path_dict = defaultdict()
+ibiui_path_dict = defaultdict()
+icici_path_dict = defaultdict()
+icibi_path_dict = defaultdict()
+iciui_path_dict = defaultdict()
+iuiui_path_dict = defaultdict()
+# for each dict, randomly get a value
+random_one_ibibi_path_dict = defaultdict()
+random_one_ibici_path_dict = defaultdict()
+random_one_ibiui_path_dict = defaultdict()
+random_one_icici_path_dict = defaultdict()
+random_one_icibi_path_dict = defaultdict()
+random_one_iciui_path_dict = defaultdict()
+random_one_iuiui_path_dict = defaultdict()
 
 class UIPath:
     def __init__(self, **kargs):
@@ -762,22 +778,7 @@ def load_all_ii_direct(user_history_f):
 
 
 def form_ii_paths(user_history_file, metapaths_folder, output_filename, metapaths):
-    ii_path_dict = defaultdict()
-    ibibi_path_dict = defaultdict()
-    ibici_path_dict = defaultdict()
-    ibiui_path_dict = defaultdict()
-    icici_path_dict = defaultdict()
-    icibi_path_dict = defaultdict()
-    iciui_path_dict = defaultdict()
-    iuiui_path_dict = defaultdict()
-    # for each dict, randomly get a value
-    random_one_ibibi_path_dict = defaultdict()
-    random_one_ibici_path_dict = defaultdict()
-    random_one_ibiui_path_dict = defaultdict()
-    random_one_icici_path_dict = defaultdict()
-    random_one_icibi_path_dict = defaultdict()
-    random_one_iciui_path_dict = defaultdict()
-    random_one_iuiui_path_dict = defaultdict()
+
     load_all_ii_direct(user_history_file)
 
     all_instances = 0
