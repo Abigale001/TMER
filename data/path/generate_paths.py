@@ -8,6 +8,7 @@ import pickle
 import torch
 from collections import defaultdict
 from itertools import chain
+from pathlib import Path
 
 
 class UIPath:
@@ -54,10 +55,10 @@ class UIPath:
             nodewv_tensor.append(nodewv_dic[node].numpy())
         nodewv_tensor = torch.Tensor(nodewv_tensor)
         self.embeddings = nodewv_tensor
-        self.user_embedding = nodewv_tensor[:2200, :]
-        self.item_embedding = nodewv_tensor[2200:24164, :]
-        self.category_embedding = nodewv_tensor[24164:24663, :]
-        self.brand_embedding = nodewv_tensor[24663:26333, :]
+        self.user_embedding = nodewv_tensor[:1450, :]
+        self.item_embedding = nodewv_tensor[1450:12907, :]
+        self.category_embedding = nodewv_tensor[12907:13336, :]
+        self.brand_embedding = nodewv_tensor[13336:14522, :]
 
     def load_user_embedding(self, ufile):
         with open(ufile) as infile:
@@ -383,6 +384,8 @@ class IIPath:
             nodewv_tensor.append(nodewv_dic[node].numpy())
         nodewv_tensor = torch.Tensor(nodewv_tensor)
         self.embeddings = nodewv_tensor
+        print('############################')
+        print(self.embeddings.shape)
 
 
     def load_all_ii_direct(self, user_history_f):
@@ -840,7 +843,8 @@ def gen_instances(args):
     csize = args.csize
     bsize = args.bsize
     ui_metapaths_list = ['uibi', 'uibici', 'uici', 'uicibi']
-    ii_metapahts_list = ['iuiui']
+    # ii_metapahts_list = ['iuiui']
+    ii_metapahts_list = ['ibibi', 'ibici', 'ibiui', 'icibi', 'icici', 'iciui', 'iuiui']
     outputinstancesfolder = args.outputinstancesfolder
     output_filename = outputinstancesfolder + 'ii_random_form.paths'
 
@@ -873,4 +877,6 @@ if __name__ == '__main__':
     parser.add_argument('bsize', type=int, default=1185, nargs='?')
 
     args = parser.parse_args()
+
+    Path(args.outputinstancesfolder).mkdir(parents=True, exist_ok=True)
     gen_instances(args)
