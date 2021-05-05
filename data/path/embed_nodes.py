@@ -19,6 +19,7 @@ from gensim.models import Word2Vec
 import pickle
 import torch
 from collections import defaultdict
+from pathlib import Path
 
 if __name__ == '__main__':
 
@@ -39,8 +40,9 @@ if __name__ == '__main__':
     data_size = num_walks * walk_length
     print("Data size (walks*length): {}".format(data_size))
 
-
     print(type(G))
+    Path("../Amazon_Music/path/node_path").mkdir(parents=True, exist_ok=True)
+
     walk_files = serialized_walks.write_walks_to_disk(G, walks_filebase, num_paths=number_walks,
                                                       path_length=walk_length, num_workers=workers, alpha=0.1,
                                                       rand=random.Random(100), always_rebuild=True)  # , r=args.r)
