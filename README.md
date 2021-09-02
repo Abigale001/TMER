@@ -9,6 +9,15 @@ python==3.6.12 <br>  networkx==2.5 <br> numpy==1.15.0 <br> pandas==1.0.1 <br> py
 <br>gensim==3.8.3
 
 You can also install the environment via `requirements.txt` and `environment.yaml`.
+
+
+## Data Preparation
+The original data can be found in the [amazon data website](https://nijianmo.github.io/amazon/index.html). 
+
+For example, the `meta_Musical_Instruments.json` of Amazon_Music can be found [here](https://forms.gle/UEkkJs69e7Z5A5Ps9).
+The `user_rate_item.csv` in the code is [here](http://deepyeti.ucsd.edu/jianmo/amazon/categoryFilesSmall/Musical_Instruments.csv) (ratings only).
+
+
 ## Usage
 If you want to change the dataset, you can modify the name in the code.
 
