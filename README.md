@@ -21,7 +21,7 @@ The `user_rate_item.csv` in the code is [here](http://deepyeti.ucsd.edu/jianmo/a
 ## Usage
 If you want to change the dataset, you can modify the name in the code.
 
-1.process data
+1.process data (You can ignore this step, if you just want to check TMER.)
 
 `python data_process.py`
 
